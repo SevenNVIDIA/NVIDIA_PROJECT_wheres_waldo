@@ -1,0 +1,17 @@
+2022-12-10 22:07:52 - Epoch: 29, Training Loss: 2.9209, Training Regression Loss 0.8830, Training Classification Loss: 2.0380
+2022-12-10 22:07:55 - Epoch: 29, Validation Loss: 2.3486, Validation Regression Loss 0.6449, Validation Classification Loss: 1.7037
+2022-12-10 22:07:55 - Saved model models/misc/mb1-ssd-Epoch-29-Loss-2.3485548006954478.pth
+2022-12-10 22:07:55 - Task done, exiting program.
+
+real    46m52.248s
+user    96m3.529s
+sys     26m10.193s
+
+
+
+
+. activate pytorch_p38
+
+python3 open_images_downloader.py --class-names "Red panda,Adhesive tape,Accordion,Muffin,Washing machine" --data=data/misc --max-images=2500
+
+time python train_ssd.py --data data/misc --model-dir models/misc
